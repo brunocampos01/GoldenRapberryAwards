@@ -83,7 +83,6 @@ GET [http://localhost:8080/awards/intervals](http://localhost:8080/awards/interv
 
 ## Como Rodar os Testes de Integração
 Os testes de integração garantem que:
-- O CSV é carregado corretamente no banco.
 - A chamada GET para o endpoint `/awards/intervals` retorna um status HTTP 2xx de sucesso.
 - O corpo da resposta (IntervalResponse) não é nulo.
 - Os arrays min e max na resposta não estão vazios.
