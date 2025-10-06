@@ -21,26 +21,28 @@ public class AwardIntegrationTest {
 
   @Test
   void shouldReturnCorrectProducerIntervals() {
-    // call endpoint
+    // call
     ResponseEntity<IntervalResponse> response = restTemplate.getForEntity("/awards/intervals", IntervalResponse.class);
 
+    // GET endpoint
     assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
 
+    // body msg
     IntervalResponse body = response.getBody();
     assertThat(body).isNotNull();
     assertThat(body.getMin()).isNotEmpty();
     assertThat(body.getMax()).isNotEmpty();
 
-    // ✅ verify min interval data matches expected
+    // min interval
     List<ProducerInterval> minList = body.getMin();
     ProducerInterval firstMin = minList.get(0);
     assertThat(firstMin.getInterval()).isGreaterThanOrEqualTo(1);
 
-    // ✅ verify max interval data
+    // max interval
     List<ProducerInterval> maxList = body.getMax();
     ProducerInterval firstMax = maxList.get(0);
     assertThat(firstMax.getInterval()).isGreaterThanOrEqualTo(firstMin.getInterval());
 
-    System.out.println("✅ Integration test executed successfully!");
+    System.out.println("Integration test executed successfully!");
   }
 }

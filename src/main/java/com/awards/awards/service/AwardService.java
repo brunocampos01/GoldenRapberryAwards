@@ -51,7 +51,7 @@ public class AwardService {
       return new IntervalResponse(Collections.emptyList(), Collections.emptyList());
     }
 
-    // Find min and max intervals
+    // find min and max
     int minInterval = intervals.stream().mapToInt(ProducerInterval::getInterval).min().orElse(0);
     int maxInterval = intervals.stream().mapToInt(ProducerInterval::getInterval).max().orElse(0);
 

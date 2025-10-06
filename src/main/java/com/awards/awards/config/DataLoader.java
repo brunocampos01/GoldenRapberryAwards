@@ -20,7 +20,6 @@ public class DataLoader {
       try (BufferedReader reader = new BufferedReader(
           new InputStreamReader(new ClassPathResource("movielist.csv").getInputStream(), StandardCharsets.UTF_8))) {
 
-        // skip header
         String line = reader.readLine();
 
         while ((line = reader.readLine()) != null) {
