@@ -12,8 +12,6 @@ Aplicação **Spring Boot**, que processa dados de filmes (`movielist.csv`) e ca
 ## Estrutura do Projeto
 ```
 ├── README.md
-├── mvnw
-├── mvnw.cmd
 ├── pom.xml
 └── src
     ├── main
@@ -55,7 +53,7 @@ O projeto usa um banco **H2 em memória**, criado automaticamente na inicializa�
 
 **Console do H2 (opcional):**
 Se quiser visualizar o banco em tempo real:
-- Acesse: `http://localhost:8080/h2-console`
+- Acesse: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 - JDBC URL: `jdbc:h2:mem:testdb`
 - Usuário: `campos`
 - Senha: *mantenha em branco*
@@ -81,12 +79,16 @@ mvn spring-boot:run
 ```
 
 ### 4. Acessar a API
-http://localhost:8080 com este endpoint: GET /awards/intervals
+GET [http://localhost:8080/awards/intervals](http://localhost:8080/awards/intervals)
 
 ## Como Rodar os Testes de Integração
 Os testes de integração garantem que:
 - O CSV é carregado corretamente no banco.
-- O cálculo dos intervalos de prêmios está coerente
+- A chamada GET para o endpoint `/awards/intervals` retorna um status HTTP 2xx de sucesso.
+- O corpo da resposta (IntervalResponse) não é nulo.
+- Os arrays min e max na resposta não estão vazios.
+- O menor intervalo sendo um valor maior ou igual a 1.
+- O maior intervalo (sendo um valor maior ou igual ao menor intervalo.
 
 Execute os testes com:
 ```bash
