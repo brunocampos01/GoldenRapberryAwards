@@ -1,4 +1,4 @@
-# Golden Raspberry Awards (Spring Boot + Java)
+# Golden Raspberry Awards
 Aplicação **Spring Boot**, que processa dados de filmes (`movielist.csv`) e calcula os **produtores com o maior e o menor intervalo entre dois prêmios consecutivos**.
 
 ## Tecnologias Utilizadas
@@ -8,8 +8,6 @@ Aplicação **Spring Boot**, que processa dados de filmes (`movielist.csv`) e ca
 - H2 Database
 - Maven
 - JUnit
-
----
 
 ## Estrutura do Projeto
 ```
@@ -52,8 +50,6 @@ Aplicação **Spring Boot**, que processa dados de filmes (`movielist.csv`) e ca
                             └── AwardIntegrationTest.java
 ```
 
----
-
 ## Configuração do Banco de Dados (H2)
 O projeto usa um banco **H2 em memória**, criado automaticamente na inicialização. O arquivo `movielist.csv` é carregado pela classe `DataLoader.java` ao subir a aplicação.
 
@@ -66,22 +62,22 @@ Se quiser visualizar o banco em tempo real:
 
 ---
 
-## ▶️ Como Executar o Projeto
+## Como Executar o Projeto
 
 ### 1. Pré-requisitos
 - Java 17+ instalado
 - Git 
-- Maven instalado (ou usar o wrapper `./mvnw`)
+- Maven instalado
 
 ### 2. Clonar o repositório
 ```bash
 git clone https://github.com/brunocampos01/GoldenRapberryAwards.git
-cd awards
+cd GoldenRapberryAwards
 ```
 
 ### 3. Rodar a aplicação
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 ### 4. Acessar a API
@@ -94,7 +90,7 @@ Os testes de integração garantem que:
 
 Execute os testes com:
 ```bash
-./mvnw test
+mvn test
 ```
 
 ## Notes
